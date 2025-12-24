@@ -1,5 +1,8 @@
 import axios from 'axios';
+import { Octokit } from 'octokit';
 import IssueRepository from '../repositories/issue.repository.js';
+
+const octokit = new Octokit();
 
 export const getAllIssues = async () => {
     return await IssueRepository.findAll();
@@ -10,8 +13,11 @@ export const getIssueByIssueId = async (issueId) => {
 };
 
 export const fetchGithubIssues = async (repoOwner, repoName) => {
-    const response = await axios.get(`https://api.github.com/repos/${repoOwner}/${repoName}/issues?state=all`);
-    return response.data;
+    return await octokit.paginate(octokit.rest.issues.listForRepo, {
+        owner: repoOwner,
+        repo: repoName,
+        per_page: 100
+    });
 };
 
 export const saveIssues = async (issues) => {
