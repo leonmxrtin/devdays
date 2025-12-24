@@ -19,6 +19,10 @@ Completo la implementación de Ollama, usando la misma librería de OpenAI. Aña
 
 # ENTREGABLES de NIVEL 2
 
+Para integrar los requisitos de todos los retos, estoy pensando en implementar un sistema similar al [ATIS](https://en.wikipedia.org/wiki/Automatic_terminal_information_service) del mundo aeronáutico. Es un sistema que emite periódicamente mensajes por radio con información sobre estado meteorológico general, condición de las pistas, visibilidad, etc.
+
+Utilizaría la API de Open-Meteo para obtener la información
+
 ## N2-P2-A 
 
 ## N2-P2-B
