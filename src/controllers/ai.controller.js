@@ -1,12 +1,18 @@
-import { generateText } from '../services/openai.service.js' ; // or '../services/ollama.service.js' if we want to try Ollama
+import { trace } from '@opentelemetry/api';
+import { generateText } from '../services/ai.service.js' ;
+
+const tracer = trace.getTracer('ai-controller-tracer');
 
 export const generateAIResponse = async (req, res) => {
+    const span = tracer.startSpan('generateAIResponse');
     try {
-        const { prompt } = req.body;
+        const { provider, prompt } = req.body;
 
-        const aiResponse = await generateText(prompt);
+        const aiResponse = await generateText(provider, prompt);
         res.status(200).json({ response: aiResponse });
     } catch (error) {
         res.status(500).json({ message: `Internal server error: ${error}` });
+    } finally {
+        span.end();
     }
 };
