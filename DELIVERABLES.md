@@ -20,11 +20,8 @@ Completo la implementación de Ollama, usando la misma librería de OpenAI. Aña
 
 # ENTREGABLES de NIVEL 2
 
-Para integrar los requisitos de todos los retos, estoy pensando en implementar un sistema similar al [ATIS](https://en.wikipedia.org/wiki/Automatic_terminal_information_service) del mundo aeronáutico. Es un sistema que emite periódicamente mensajes por radio con información sobre estado meteorológico general, condición de las pistas, visibilidad, etc.
+Para integrar los requisitos de todos los retos, he implementado un sistema similar al [ATIS](https://en.wikipedia.org/wiki/Automatic_terminal_information_service) del mundo aeronáutico. Es un sistema que emite periódicamente mensajes por radio con información sobre estado meteorológico general, condición de las pistas, visibilidad, etc.
 
-Utilizaría la API de Open-Meteo para obtener la información meteorológica de la próxima hora, construir el mensaje en el formato estándar y generar un audio, quedando algo similar al siguiente ejemplo de [emisión en Madrid-Barajas](https://youtu.be/5ELB-fpfz7w)
-## N2-P2-A 
+Utilizo la API de Open-Meteo para obtener la información meteorológica de la próxima hora, construir el mensaje en el formato estándar y generar un audio, quedando algo similar al siguiente ejemplo de [emisión en Madrid-Barajas](https://youtu.be/5ELB-fpfz7w)
 
-## N2-P2-B
-
-## N2-P2-C
+No he tenido oportunidad de implementar auditoría para estos datos, pero sería muy sencillo: ya tenemos la arquitectura de auditorías definida previamente, simplemente habría que crear una función que se encargara de analizar los datos meteorológicos y emitir un informe de auditoría. Como criterio de cumplimiento se pueden usar métricas sencillas como la visibilidad, o buscar una serie de condiciones más realistas que permitan determinar si es seguro volar.
