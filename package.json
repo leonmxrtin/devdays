@@ -29,6 +29,7 @@
     "mongoose": "^9.0.2",
     "octokit": "^5.0.5",
     "openai": "^6.15.0",
+    "openmeteo": "^1.2.3",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^13.0.0"
   }

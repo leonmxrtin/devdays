@@ -7,6 +7,7 @@ import { userRouter } from './routes/user.routes.js';
 import { issueRouter } from './routes/issue.routes.js';
 import { auditRouter } from './routes/audit.routes.js';
 import { aiRouter } from './routes/ai.routes.js';
+import { atisRouter } from './routes/atis.routes.js';
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use('/api/v1/', userRouter);
 app.use('/api/v1/', issueRouter);
 app.use('/api/v1', auditRouter);
 app.use('/api/v1/', aiRouter);
+app.use('/api/v1/', atisRouter);
 
 bundle('./src/docs/openapi.yaml')
     .then((api) => {
